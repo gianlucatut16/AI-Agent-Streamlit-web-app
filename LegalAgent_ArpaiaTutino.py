@@ -18,7 +18,7 @@ import streamlit as st
 import time
 
 # API key
-OPEN_AI_KEY = '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'
+OPEN_AI_KEY = # YOUR PERSONAL OpenAI API KEY
 
 def load_txt_files(directory : str):
 
