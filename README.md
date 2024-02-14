@@ -3,6 +3,8 @@ For the exam in Text Mining the professors asked me to create an agent OpenAI, t
 For this python code we used 2 libraries: 
 - Langchain: useful to work with the text files that will be processed and to create the agent we'll talk with.
 - Streamlit: a library that gives us a framework to build the web application that we'll use to interact with the agent.
+
+
 The code is based on three steps:
 - Work with the text files: these two files are basically entire pieces of italian laws about the division of asset in case of divorce and inheritance. First thing was to split these documents in smaller chunks. Once done that, I used a langchain function in order to create embeddings for every chunk and Chroma to create a dataset with the documents and their embeddings.
 - Definition of the agent: in order to work an agent has to be given the llm that will be the engine (in our case we used the model ChatOpenAI provided by the langchain library). Then the agent need the retriever tool, so a tool to retrieve information from the Chroma dataset defined above. Finally it needs a prompt (so a string in natural language that tells to the agent how "to behave"). In the prompt I told the agent to take into account the conversation memory before answering (in this case the conversation memory is the memory of the session in the streamlit app)
